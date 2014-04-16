@@ -1,0 +1,11 @@
+CREATE TABLE exam_paper_config_tbl (id BIGINT AUTO_INCREMENT, ep_id INT, ep_ques_type_id INT, ep_ques_chapter_id INT, ep_ques_number INT, INDEX ep_ques_chapter_id_idx (ep_ques_chapter_id), INDEX ep_ques_type_id_idx (ep_ques_type_id), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE exam_paper_final_tbl (id INT AUTO_INCREMENT, exam_paper_id INT, exam_ques_type_id INT, exam_ques_id BIGINT, insert_date DATETIME, update_date DATETIME, delete_date DATETIME, INDEX exam_ques_id_idx (exam_ques_id), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE exam_paper_master_tbl (id INT AUTO_INCREMENT, title VARCHAR(255), is_build_flag TINYINT DEFAULT '0', insert_date DATETIME, update_date DATETIME, delete_date DATETIME, PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE exam_paper_template_tbl (id INT AUTO_INCREMENT, position VARCHAR(32), template TEXT, PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE exam_question_chapter_tbl (id INT AUTO_INCREMENT, parent_cid INT, name VARCHAR(255), is_parent CHAR(1), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE exam_question_master_tbl (id BIGINT AUTO_INCREMENT, ques_content TEXT, ques_type_id INT, ques_chapter_ids VARCHAR(64), ques_difficulties VARCHAR(128), pic_path VARCHAR(255), insert_date DATETIME, update_date DATETIME, delete_date DATETIME, INDEX ques_type_id_idx (ques_type_id), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE exam_question_type_tbl (id INT AUTO_INCREMENT, qt_name VARCHAR(128), qt_abbr VARCHAR(8), sequence INT, delete_flag CHAR(1) DEFAULT '0', PRIMARY KEY(id)) ENGINE = INNODB;
+ALTER TABLE exam_paper_config_tbl ADD CONSTRAINT exam_paper_config_tbl_ep_ques_type_id_exam_question_type_tbl_id FOREIGN KEY (ep_ques_type_id) REFERENCES exam_question_type_tbl(id);
+ALTER TABLE exam_paper_config_tbl ADD CONSTRAINT eeei FOREIGN KEY (ep_ques_chapter_id) REFERENCES exam_question_chapter_tbl(id);
+ALTER TABLE exam_paper_final_tbl ADD CONSTRAINT exam_paper_final_tbl_exam_ques_id_exam_question_master_tbl_id FOREIGN KEY (exam_ques_id) REFERENCES exam_question_master_tbl(id);
+ALTER TABLE exam_question_master_tbl ADD CONSTRAINT exam_question_master_tbl_ques_type_id_exam_question_type_tbl_id FOREIGN KEY (ques_type_id) REFERENCES exam_question_type_tbl(id);

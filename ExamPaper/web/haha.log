@@ -1,0 +1,74 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9)
+entering extended mode
+
+(D:/wamp/www/ExamPaper/apps/frontend/modules/configure/actions/../../../../../o
+utput/6.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for loaded.
+(C:\CTEX\MiKTeX\tex\latex\base\article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(C:\CTEX\MiKTeX\tex\latex\base\size12.clo))
+(C:\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty)
+(C:\CTEX\CTeX\tex\latex\texfriend\mathbbold.sty)
+(C:\CTEX\MiKTeX\tex\latex\ams\math\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(C:\CTEX\MiKTeX\tex\latex\ams\math\amstext.sty
+(C:\CTEX\MiKTeX\tex\latex\ams\math\amsgen.sty))
+(C:\CTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty)
+(C:\CTEX\MiKTeX\tex\latex\ams\math\amsopn.sty))
+(C:\CTEX\MiKTeX\tex\latex\cjk\CJK.sty
+(C:\CTEX\MiKTeX\tex\latex\cjk\mule\MULEenc.sty)
+(C:\CTEX\MiKTeX\tex\latex\cjk\CJK.enc))
+(C:\CTEX\MiKTeX\tex\latex\cjk\CJKulem.sty
+(C:\CTEX\MiKTeX\tex\latex\ulem\ulem.sty))
+(C:\CTEX\MiKTeX\tex\latex\graphics\color.sty
+(C:\CTEX\MiKTeX\tex\latex\00miktex\color.cfg)
+(C:\CTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def
+(C:\CTEX\MiKTeX\tex\generic\oberdiek\infwarerr.sty)
+(C:\CTEX\MiKTeX\tex\generic\oberdiek\ltxcmds.sty)))
+(C:\CTEX\MiKTeX\tex\latex\colortbl\colortbl.sty
+(C:\CTEX\MiKTeX\tex\latex\tools\array.sty))
+(C:\CTEX\MiKTeX\tex\latex\fancyhdr\fancyhdr.sty)
+(C:\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
+(C:\CTEX\MiKTeX\tex\latex\graphics\keyval.sty)
+(C:\CTEX\MiKTeX\tex\latex\graphics\graphics.sty
+(C:\CTEX\MiKTeX\tex\latex\graphics\trig.sty)
+(C:\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg)))
+(C:\CTEX\MiKTeX\tex\latex\tools\indentfirst.sty)
+(C:\CTEX\MiKTeX\tex\latex\lastpage\lastpage.sty)
+(C:\CTEX\MiKTeX\tex\latex\base\latexsym.sty)
+(C:\CTEX\MiKTeX\tex\latex\listings\listings.sty
+(C:\CTEX\MiKTeX\tex\latex\listings\lstmisc.sty)
+(C:\CTEX\MiKTeX\tex\latex\listings\listings.cfg))
+(C:\CTEX\MiKTeX\tex\latex\multirow\multirow.sty)
+(C:\CTEX\MiKTeX\tex\latex\jknappen\mathrsfs.sty)
+(C:\CTEX\MiKTeX\tex\latex\placeins\placeins.sty)
+(C:\CTEX\MiKTeX\tex\latex\titlesec\titlesec.sty)
+(C:\CTEX\MiKTeX\tex\latex\geometry\geometry.sty
+(C:\CTEX\MiKTeX\tex\generic\oberdiek\ifpdf.sty)
+(C:\CTEX\MiKTeX\tex\generic\oberdiek\ifvtex.sty)
+(C:\CTEX\MiKTeX\tex\generic\ifxetex\ifxetex.sty)
+(C:\CTEX\MiKTeX\tex\latex\geometry\geometry.cfg))
+(D:\wamp\www\ExamPaper\web\6.aux)
+(C:\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(C:\CTEX\MiKTeX\tex\latex\cjk\standard.bdg)
+(C:\CTEX\MiKTeX\tex\latex\cjk\extended.enc)
+(C:\CTEX\MiKTeX\tex\latex\cjk\extended.chr)
+(C:\CTEX\CTeX\tex\latex\CJK\GB\c19song.fd)
+! Improper alphabetic constant.
+<to be read again> 
+                   \color@endgroup 
+l.115 }}
+        
+? 
+! Emergency stop.
+<to be read again> 
+                   \color@endgroup 
+l.115 }}
+        
+!  ==> Fatal error occurred, no output PDF file produced!
+Transcript written on 6.log.
