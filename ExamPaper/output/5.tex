@@ -1,0 +1,251 @@
+\documentclass[12pt,twoside]{article}
+\usepackage{amsfonts}
+\usepackage{mathbbold}
+\usepackage{amsmath}
+\usepackage{CJK}
+\usepackage{CJKulem}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\usepackage{lastpage}
+\usepackage{latexsym}
+\usepackage{listings}
+\usepackage{multirow}
+%\usepackage{times} %use the Times New Roman fonts
+\usepackage{mathrsfs}
+\usepackage{placeins}
+\usepackage{titlesec}
+\usepackage{ulem}
+\usepackage[paperwidth=19.5cm,paperheight=27cm,top=1.5cm,bottom=2cm,right=2cm]{geometry}
+%\lstset{language=C,keywordstyle=\color{red},showstringspaces=false,rulesepcolor=\color{green}}
+
+\oddsidemargin=0.5cm   %奇数页页边距
+\evensidemargin=-0.6cm %偶数页页边距
+\textwidth=15cm        %文本的宽度
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%定义公式: \[ \] 靠左 其他居中
+
+\newdimen\mathindent
+\mathindent\leftmargini
+
+\makeatletter
+
+\renewcommand\[{\relax
+               \ifmmode\@badmath
+               \else
+                 \begin{trivlist}%
+                   \@beginparpenalty\predisplaypenalty
+                   \@endparpenalty\postdisplaypenalty
+                   \item[]\leavevmode
+                   \hb@xt@\linewidth\bgroup $\m@th\displaystyle %$
+                     \hskip\mathindent\bgroup
+               \fi}
+\renewcommand\]{\relax
+               \ifmmode
+                     \egroup $\hfil% $
+                   \egroup
+                 \end{trivlist}%
+               \else \@badmath
+               \fi}
+
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%定义“命令”\kcmc (课程名称)，\kcdm （课程代码）, \ksxs （考试形式）
+\newcommand{\kcmc}[1]{\settowidth{\labelwidth}{#1}
+  \underline{\,\hspace{2.6cm}\hspace{-0.5\labelwidth}\mbox{\textbf{#1}}\hspace{2.6cm}\hspace{-0.5\labelwidth}}
+}
+\newcommand{\kcdm}[1]{\settowidth{\labelwidth}{#1}
+  \underline{\,\hspace{1.5cm}\hspace{-0.5\labelwidth}\mbox{\textbf{#1}}\hspace{1.5cm}\hspace{-0.5\labelwidth}}
+}
+\newcommand{\ksxs}[1]{\settowidth{\labelwidth}{#1}
+  \underline{\,\hspace{1.7cm}\hspace{-0.5\labelwidth}\mbox{\textbf{#1}}\hspace{1.7cm}\hspace{-0.5\labelwidth}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%定义划线命令
+
+\newcommand{\fixblank}{\uline{\hspace{1em}\ \hspace{1em}\
+\hspace{1em}\ \hspace{1em}\ \hspace{1em}\ \hspace{1em}}}
+\newcommand{\blank}[1]{\uline{{}\hspace{#1em}{}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\baselinestretch}{1.5}
+
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+
+
+\begin{document}
+\begin{CJK}{GBK}{song}
+
+%页码1
+\fancyhf{} \fancyfoot[CO,CE]{\vspace*{1mm}第\,\thepage\,页 \, (\, 共
+\pageref{LastPage}页\,)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%定义装订线
+
+\newsavebox{\zdx}
+
+\newcommand{\putzdx}{\marginpar{
+\parbox{1cm}{\vspace{-2.6cm}
+\rotatebox[origin=c]{90}{
+\usebox{\zdx}
+}} }}
+
+%%%%%%
+
+\sbox{\zdx}
+    {\parbox{27cm}{
+    \centering \CJKfamily{song}{{}\vspace{13mm}(\  \rotatebox[origin=c]{270}{题}
+    \rotatebox[origin=c]{270}{答}\
+    \rotatebox[origin=c]{270}{要}\ \rotatebox[origin=c]{270}{不}
+    \rotatebox[origin=c]{270}{内}\
+    \rotatebox[origin=c]{270}{线}\ \rotatebox[origin=c]{270}{订}\ \rotatebox[origin=c]{270}{装}
+\ )} \\
+\vspace{2mm}
+\hspace{-40mm}\dotfill{} \dotfill{}\dotfill{}\dotfill{}\hspace{-100mm}{} \\
+}}
+
+\reversemarginpar
+
+%第一页
+\putzdx %%装订线--奇页数
+
+%% 试卷头
+
+  \begin{center}
+    \begin{Large}
+       复旦大学数学科学学院\\
+        2005～2006学年第二学期期末考试试卷\vspace{2mm}\\
+        {} $\Box$  \textbf{A 卷} \hspace{1cm}$\Box$ \textbf{B 卷}
+    \end{Large}
+  \end{center}
+
+\noindent\large
+\textbf{课程名称}：\kcmc{数学分析II}\hspace{2mm}\textbf{课程代码}：\kcdm{318.151.2}\\
+\textbf{开课院系}：\kcmc{数学科学学院}\hspace{2mm}\textbf{考试形式}：\ksxs{闭卷}\\
+\textbf{姓\ \ 名}：\underline{\, \hspace{2.2cm}}\hspace{2mm}
+\textbf{学\ \ 号}： \underline{\, \hspace{2.0cm}}\hspace{2mm}
+\textbf{专\ \ 业}：\underline{\, \hspace{3.2cm}}
+%在“数学分析II”的位置填入课程名称；在“318.151.2”的位置填入课程代码
+%在“闭卷”的位置填入考试形式：开卷、闭卷或课程论文
+
+\bigskip
+
+\begin{table}[htbp]\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{题\ \ 目}& 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & \textbf{总分}\\
+\hline \textbf{得\ \ 分}& \hspace{10mm} & \hspace{10mm} &
+\hspace{10mm} &\hspace{10mm}
+& \hspace{10mm} & \hspace{10mm} & \hspace{10mm} & \hspace{10mm} & \hspace{10mm} \\
+\hline
+\end{tabular}
+\end{table}
+
+\bigskip
+
+\bigskip
+%如果题目多于八题
+
+\noindent
+%\begin{table}[htbp]\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{题\ \ 号}& 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & \multirow{2}{10pt}{\textbf{总\ \ 分}}\\
+\cline{1-9} \textbf{得\ \ 分}& \hspace{10mm} & \hspace{10mm} &
+\hspace{10mm} &\hspace{10mm}
+& \hspace{10mm} & \hspace{10mm} & \hspace{10mm} & \hspace{10mm} & \hspace{10mm} \\
+\hline
+\textbf{题\ \ 号} & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 &  \multirow{2}{10pt}{} \\
+\cline{1-9} \textbf{得\ \ 分} & \hspace{10mm} & \hspace{10mm} &
+\hspace{10mm} &\hspace{10mm}
+& \hspace{10mm} & \hspace{10mm} & \hspace{10mm} & \hspace{10mm}& \hspace{10mm}\\
+\hline
+\end{tabular}
+
+\bigskip
+
+\bigskip\noindent \textbf{填空题}\begin{enumerate}\item
+函数~$y=\frac{1}{\sqrt{25-x^2}}+\arcsin\frac{x-1}{5}$~的定义域为$\uline{\hspace{1.5 cm}}$。
+\item
+已知~$f(x)=e^{x^2}, f[\varphi(x)]=1-x$
+且~$\varphi(x)\geq 0$，则~$\varphi(x)=\uline{\hspace{1.5 cm}}$，
+定义域为$\uline{\hspace{1.5 cm}}$。
+\item
+~$\lim\limits_{n\rightarrow \infty}{(\frac{n+1}{n})^{(-1)^n}}=\uline{\hspace{1.5 cm}}.$~
+\item
+~$\lim\limits_{x\rightarrow -\infty}{\frac{\sqrt{4x^2+x-1}+x+1}{\sqrt{x^2+\sin x}}}$.
+\item
+~$\lim\limits_{x\rightarrow 0}{(1+x)^{\frac{2}{x}}}=\uline{\hspace{1.5 cm}}$.
+\end{enumerate}
+\noindent \textbf{选择题}\begin{enumerate}\item
+选择以下两题中给出的四个结论中一个正确的结论。\\
+（1）设~$f(x)=2^x+3^x-2$，则当~$x\rightarrow 0$~时，有（\hspace{1.5 cm}）。
+\begin{flalign*}
+&(A)\text{~f(x)~与~x~是等价无穷小。} & &(B)\text{~f(x)~与~x~同阶但非等价无穷小。} \\
+&(C)\text{~f(x)~是比~x~高阶的无穷小。} & &(D)\text{~f(x)~是比~x~低价无穷小。}
+\end{flalign*}
+
+（2）设
+$$f(x)=\frac{e^{\frac{1}{x}}-1}{e^{\frac{1}{x}}+1},$$
+则~$x=0$~是~$f(x)$~的（\hspace{1.5 cm}）。
+\begin{flalign*}
+&(A)\text{可去间断点。} & &(B)\text{跳跃间断点。} \\
+&(C)\text{第二类间断点。} & &(D)\text{连续点。}
+\end{flalign*}
+\item
+对任意给定的~$\epsilon\in (0, 1),$~总存在正整数~$N$,~当~$n\geq N$~时，恒有~$|x_n-a|\leq 2\epsilon$~是
+数列~$\{a_n\}$~收敛于~$a$~的~$\uline{\hspace{1.5 cm}}.$
+\begin{flalign*}
+&~(A)~\text{充分条件但非必要条件}~& &~(B)~\text{必要条件但非充分条件}~\\
+&~(C)~\text{充分必要条件}~& &~(D)~\text{既非充分条件又非必要条件}~\\
+\end{flalign*}
+\item
+设~$\{a_n\}, \{b_n\}, \{c_n\}$~均为非负数列，且~$\lim\limits_{n\rightarrow \infty} {a_n}=0$~,
+~$\lim\limits_{n\rightarrow \infty} {b_n}=1$~,~$\lim\limits_{n\rightarrow \infty} {c_n}=\infty$~,
+则必有~$\uline{\hspace{1.5 cm}}.$
+\begin{flalign*}
+&~(A)~a_n<b_n~\text{对任意~n~成立}~& &~(B)~b_n<c_n~\text{对任意~n~成立}~\\
+&~(C)~\text{极限}~\lim\limits_{n\rightarrow \infty} {a_n}~c_n~\text{不存在}& &
+~(D)~\text{极限}~\lim\limits_{n\rightarrow \infty} {b_n}~c_n~\text{不存在}
+\end{flalign*}
+\item
+若~$\lim\limits_{x\rightarrow 0}{\frac{\sin 6x+xf(x)}{x^3}}=0$,则~$\lim\limits_{x\rightarrow 0}{\frac{6+f(x)}{x^2}}$为~$\uline{\hspace{1.5 cm}}$~.
+\item
+已知~$\lim\limits_{x\rightarrow +\infty}{(\frac{x^2}{x+1}-ax-b)}=0$~,其中~$a, b$~是常数，则\\
+$(A)a=1, b=1\quad (B)a=-1, b=1\quad (C)a=1, b=-1\quad (D)a=-1, b=-1$
+\end{enumerate}
+\noindent \textbf{判断题}\begin{enumerate}\item
+设~$f(x)$~为奇函数，判断下列函数的奇偶性：\\
+\begin{flalign*}
+&~(1)~xf(x)~& &~(2)~(x^2+1)f(x)~& &~(3)~|f(x)|~\\
+&~(4)~-f(-x)~& &~(5)~f(x)(\frac{2^x+1}{2}-\frac{1}{2})~& &\\
+\end{flalign*}
+\item
+判断函数~$f(x)=\ln(x+\sqrt{1+x^2})$~的奇偶性。
+\end{enumerate}
+\noindent \textbf{计算题}\begin{enumerate}\item
+设~$a_0=0, a_{n+1}=1+\sin(a_n-1) (n\geq 0).$~求~$\lim\limits_{n\rightarrow \infty}{a_n}$.
+\item
+求函数
+$$f(x)=\frac{|x|}{x}, g(x)=\frac{1-a^{\frac{1}{x}}}{1+a^{\frac{1}{x}}}(a>1)$$
+当~$x\rightarrow 0$~时的左、右极限，并说明~$x\rightarrow 0$~时极限是否存在。
+\end{enumerate}
+\noindent \textbf{证明题}\begin{enumerate}\item
+证明
+$$\lim\limits_{n\rightarrow\infty}{(\frac{1}{\sqrt{n^2+1}}+\frac{1}{\sqrt{n^2+2}}+\cdots+\frac{1}{\sqrt{n^2+n}})}=1.$$
+\item
+证明~$\lim\limits_{x\rightarrow +\infty}{x\sin x}$~不存在.
+\end{enumerate}
+\clearpage
+\end{CJK}
+\end{document}
